@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LayoutModule } from './core/layout/layout.module';
+import { AuthModule } from './core/auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { LayoutModule } from './core/layout/layout.module';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    AuthModule,
     LayoutModule
   ],
   providers: [],

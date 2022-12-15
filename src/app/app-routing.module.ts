@@ -14,6 +14,11 @@ const routes: Routes = [
     path: 'film',
     loadChildren: () => import("./feature/film/film.module").then(m => m.FilmModule)
   },
+  {
+    path: 'auth',
+    loadChildren: () => import("./core/auth/auth.module").then(m => m.AuthModule)
+  },
+  { path: '', redirectTo: 'auth', pathMatch: 'full' },
   { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
 ];
 
