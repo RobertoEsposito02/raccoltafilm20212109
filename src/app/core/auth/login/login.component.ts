@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       this._authService.login(utenteForm.value).pipe(
         takeUntil(this.destroy$)
       ).subscribe(res =>{
+        this._authService.setUserLogged(res);
         this._router.navigate(["welcome"])
       })
     }else{

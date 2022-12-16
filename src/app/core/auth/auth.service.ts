@@ -13,8 +13,8 @@ export class AuthService{
   constructor(private _http:HttpClient) { }
   
   login(loginForm:Utente){
-    this.setUserLogged(loginForm);
-    return of({username: loginForm.username, token: ""});
+    //this.setUserLogged(loginForm);
+    return of({username: loginForm.username, token: "ok"});
   }
 
   setUserLogged(user:Utente | null){

@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LayoutModule } from './core/layout/layout.module';
 import { AuthModule } from './core/auth/auth.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AuthModule } from './core/auth/auth.module';
     HttpClientModule,
     FormsModule,
     AuthModule,
-    LayoutModule
+    LayoutModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
