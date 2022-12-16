@@ -1,18 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './core/auth/auth.guard';
 
 const routes: Routes = [
   {
     path: 'welcome',
-    loadChildren: () => import("./feature/welcome/welcome.module").then(m => m.WelcomeModule)
+    loadChildren: () => import("./feature/welcome/welcome.module").then(m => m.WelcomeModule),
+    canActivate: [AuthGuard]
+    
   },
   {
     path: 'regista',
-    loadChildren: () => import("./feature/regista/regista.module").then(m => m.RegistaModule)
+    loadChildren: () => import("./feature/regista/regista.module").then(m => m.RegistaModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'film',
-    loadChildren: () => import("./feature/film/film.module").then(m => m.FilmModule)
+    loadChildren: () => import("./feature/film/film.module").then(m => m.FilmModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'auth',
