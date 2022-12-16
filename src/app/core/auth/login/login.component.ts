@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit, OnDestroy {
         this._router.navigate(["welcome"])
       })
     }else{
-      
+      this._router.navigate(["auth/login"])
     }
   }
 
