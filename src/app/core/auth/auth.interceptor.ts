@@ -15,11 +15,14 @@ export class AuthInterceptor implements HttpInterceptor {
   constructor(private _authService:AuthService) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    request = request.clone(
-      {
-        headers: new HttpHeaders({ Authorization: `Bearer ${this._authService.getUserToken()}` })
-      }
-    )
+
+    if(!request.url.includes("login")){
+      request = request.clone(
+        {
+          headers: new HttpHeaders({ Authorization: `Bearer ${this._authService.getUserToken()}` })
+        }
+      )
+    }
 
     return next.handle(request);
   }
