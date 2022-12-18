@@ -11,7 +11,7 @@ import { RegistaService } from '../regista.service';
 })
 export class RegistaCreateComponent implements OnInit {
 
-  regista: Regista = new Regista();
+  regista!: Regista;
   errorMessage: string = '';
 
   constructor(private registaService: RegistaService, private router: Router) { }
@@ -22,7 +22,7 @@ export class RegistaCreateComponent implements OnInit {
   save(registaForm: NgForm): void {
     console.log('sub ' + JSON.stringify(this.regista));
     if (registaForm.valid) {
-      this.registaService.addRegista(this.regista).subscribe({
+      this.registaService.addRegista(this.regista!).subscribe({
         next: registaItem => {
           this.regista = registaItem;
           this.errorMessage = '';
